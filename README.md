@@ -20,9 +20,19 @@ This project implements data loader and data publisher for EuRoC MAV dataset.
 or    
 `python vio.py --path path/to/your/EuRoC_MAV_dataset/MH_01_easy` (no visualization)  
 
+## For DEEP Visual Inertial Odometry Set training data and run the following command to train the network
+
+`python train.py --images <Path to the images folder> --IMU <path to imu data> --rotations<path to relative pose data> --minibatch <Minibatch size> --epochs <Number of epochs> --lr <Learning rate> --latestmodelpath <folder to load checkpoint and start training from that epoch> --checkpointpath <where should the checkpoints save> --logspath <where the tensorlogs should save> --model <which model to run>`
+
+## to run the inference model set inference data and run the following command
+
+`python test.py --images <Path to the images folder> --IMU <path to imu data> --rotations<path to relative pose data> --minibatch <Minibatch size> --latestmodelpath <which model to load> --model <which model to run> --groundtruth <path to ground truth data>`
+
 ## Results
 MH_01_easy  
 ![](Code/imgs/euroc_mh_01_easy.png)
 
 ## License and References
 Follow [license of msckf_vio](https://github.com/KumarRobotics/msckf_vio/blob/master/LICENSE.txt). Code is adapted from [this implementation](https://github.com/uoip/stereo_msckf).
+
+
